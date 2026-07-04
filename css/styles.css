@@ -1,0 +1,192 @@
+/* Base */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Confetti canvas */
+#confetti-canvas {
+  width: 100%;
+  height: 100%;
+}
+
+/* Balloons */
+.balloons {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.balloon {
+  position: absolute;
+  bottom: -120px;
+  width: 60px;
+  height: 75px;
+  border-radius: 50%;
+  opacity: 0.85;
+  box-shadow: inset -8px -8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.balloon::after {
+  content: '';
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 50px;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.balloon-1 {
+  left: 5%;
+  background: linear-gradient(135deg, #D4A574 0%, #B45309 100%);
+  animation: rise 14s linear infinite;
+}
+
+.balloon-2 {
+  left: 20%;
+  background: linear-gradient(135deg, #FDE68A 0%, #F59E0B 100%);
+  animation: rise 16s linear infinite 2s;
+}
+
+.balloon-3 {
+  left: 45%;
+  background: linear-gradient(135deg, #FECACA 0%, #EF4444 100%);
+  animation: rise 13s linear infinite 1s;
+}
+
+.balloon-4 {
+  left: 65%;
+  background: linear-gradient(135deg, #BFDBFE 0%, #3B82F6 100%);
+  animation: rise 15s linear infinite 3s;
+}
+
+.balloon-5 {
+  left: 80%;
+  background: linear-gradient(135deg, #D9F99D 0%, #84CC16 100%);
+  animation: rise 17s linear infinite 4s;
+}
+
+.balloon-6 {
+  left: 92%;
+  background: linear-gradient(135deg, #DDD6FE 0%, #8B5CF6 100%);
+  animation: rise 14s linear infinite 5s;
+}
+
+@keyframes rise {
+  0% {
+    transform: translateY(0) rotate(-5deg);
+  }
+  25% {
+    transform: translateY(-30vh) rotate(5deg);
+  }
+  50% {
+    transform: translateY(-60vh) rotate(-3deg);
+  }
+  75% {
+    transform: translateY(-85vh) rotate(4deg);
+  }
+  100% {
+    transform: translateY(-120vh) rotate(0deg);
+  }
+}
+
+/* Sparkles */
+.sparkles {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.sparkle {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: #D4A574;
+  border-radius: 50%;
+  box-shadow: 0 0 12px 2px rgba(212, 165, 116, 0.6);
+  animation: twinkle 3s ease-in-out infinite;
+}
+
+.sparkle:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+.sparkle:nth-child(3) {
+  animation-delay: 1s;
+}
+
+.sparkle:nth-child(4) {
+  animation-delay: 1.5s;
+}
+
+.sparkle:nth-child(5) {
+  animation-delay: 2s;
+}
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(0.7);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.3);
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .balloon,
+  .sparkle {
+    animation: none;
+    opacity: 0.3;
+  }
+
+  .scroll-hint svg {
+    animation: none;
+  }
+
+  #confetti-canvas {
+    display: none;
+  }
+}
+
+/* Hide elements before GSAP animates them in */
+.hero-subtitle,
+.hero-digit,
+.hero-title,
+.hero-message,
+.hero-cta,
+#wish-message,
+.intro-card,
+.gallery-title,
+.gallery-subtitle,
+.gallery-item,
+.wishes-title,
+.wish-card,
+.footer-title,
+.footer-text,
+#celebrate-again {
+  opacity: 1; /* base state; GSAP will handle animation */
+}
+
+/* Mobile tweaks */
+@media (max-width: 640px) {
+  .balloon {
+    width: 36px;
+    height: 45px;
+  }
+
+  .balloon::after {
+    height: 30px;
+    bottom: -25px;
+  }
+}
