@@ -1,0 +1,13 @@
+{
+  "name": "nick-birthday-card",
+  "version": "1.0.0",
+  "description": "Static birthday celebration website for Uncle Nik",
+  "private": true,
+  "scripts": {
+    "build": "echo 'No build step required for static site'",
+    "start": "npx serve ."
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
