@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://nikolakns.github.io/nick-birthday-card/sitemap.xml

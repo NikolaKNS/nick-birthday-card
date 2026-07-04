@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Page Not Found — Nick's Birthday Card</title>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Quicksand:wght@400;600&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { cream: '#FDF8F3', champagne: '#D4A574', charcoal: '#1F2937' },
+          fontFamily: { script: ['Caveat', 'cursive'], body: ['Quicksand', 'sans-serif'] },
+        },
+      },
+    }
+  </script>
+</head>
+<body class="bg-cream text-charcoal font-body min-h-screen flex items-center justify-center px-6">
+  <div class="text-center">
+    <h1 class="font-script text-7xl md:text-9xl text-champagne mb-4">404</h1>
+    <p class="text-xl md:text-2xl text-gray-600 mb-8">Oops! This page seems to have flown away like a birthday balloon.</p>
+    <a href="/" class="inline-flex items-center gap-2 bg-champagne hover:bg-[#B45309] text-white font-semibold text-lg px-8 py-4 rounded-full shadow-lg transition-all duration-300 hover:scale-105">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+      </svg>
+      Back to the celebration
+    </a>
+  </div>
+</body>
+</html>
